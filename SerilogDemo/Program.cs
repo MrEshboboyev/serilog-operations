@@ -32,7 +32,7 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
-
+    app.UseSerilogRequestLogging();
     app.UseHttpsRedirection();
 
     app.UseAuthorization();
