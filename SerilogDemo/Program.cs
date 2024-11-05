@@ -1,4 +1,6 @@
 using Serilog;
+using SerilogDemo.Services.IServices;
+using SerilogDemo.Services;
 
 // create Serilog instance
 Log.Logger = new LoggerConfiguration()
@@ -20,6 +22,8 @@ try
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+
+    builder.Services.AddTransient<IDummyService, DummyService>();
 
     var app = builder.Build();
 
