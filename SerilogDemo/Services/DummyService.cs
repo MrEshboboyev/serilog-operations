@@ -9,5 +9,6 @@ public class DummyService(ILogger<DummyService> logger) : IDummyService
         logger.LogInformation("something is done");
         logger.LogCritical("oops");
         logger.LogDebug("nothing much");
+        logger.LogInformation("Invoking {@Event} with ID as {@Id}", "SomeEvent", Guid.NewGuid());
     }
 }
